@@ -1,0 +1,7 @@
+Gra todo:
+1. Losowe zdjęcie z katalogu; - aborted
+2. Automatyczne trzymanie proporcji; - done	
+3. Komentarze - done
+4. Druga wersja z pustym blokiem;
+5. Swype;
+6. Dodanie klasy np. "Complete" obok klasy "tileWrapper"

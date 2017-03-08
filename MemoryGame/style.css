@@ -1,0 +1,164 @@
+/* default styles */
+* {
+	box-sizing: border-box;
+	-moz-transition: ease-in all 0.3s, -moz-transform 0.3s;
+    -webkit-transition: ease-in all 0.3s, -webkit-transform 0.3s;
+    -o-transition: ease-in all 0.3s, -o-transform 0.3s;
+    transition: ease-in all 0.3s, transform 0.3s;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-image: url("images/bg.jpg");
+	background-color: #1f1f1f;
+	background-size: contain;
+	color: #FFF;
+	font-family: "Open Sans";
+	font-size: 1em;
+}
+
+label {
+	margin-bottom: 3px;
+}
+
+label, input {
+	display: block;
+	vertical-align: middle;
+}
+
+input, select, textarea {
+	border: 3px solid #d5d5d5;
+	font-size: 1.4em;
+	padding: .1em .4em;
+	text-align: center;
+	width: 200px;
+}
+
+select {
+	font-size: 1.3em;
+	width: auto;
+}
+/* end default styles */
+
+header, 
+footer {
+	margin: 0 auto;
+	padding: 3% 0;
+	text-align: center;
+}
+
+header {
+	border-bottom: 2px solid #000;
+	box-shadow: -2px 2px 10px #000;
+}
+
+header h1 {
+	font-family: "Lobster", cursive;
+	font-size: 4em;
+	line-height: 1em;
+	margin: 0;
+	padding: 0;
+	text-transform: uppercase;
+}
+
+/* game styles */
+.gameSettings {
+	background-color: #0067b6;
+	border-bottom: 1px solid #000;
+	box-shadow: -2px -3px 10px #000;
+	margin: 0 auto;
+	padding: 1% 0;
+	position: relative;
+	text-align: center;
+	width: 100%;
+	z-index: 1;
+}
+
+.gameSettings .gameSetCol {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.gameContent {
+	background-color: #2d2d2d;
+	box-shadow: -2px 2px 10px #000;
+	padding: 3% 0;
+	width: 100%;
+}
+
+.gameContent .gameContentMaxW {
+	height: 100%;
+	margin: 0 auto;
+	max-width: 600px;
+	width: 100%;
+}
+
+.tile { 
+	border: 10px solid transparent;
+	color: #FFF;
+	display: block;
+	position: absolute;
+	-webkit-transition: all 0.2s ease-in-out;
+  	-moz-transition: all 0.2s ease-in-out;
+  	-o-transition: all 0.2s ease-in-out;
+  	transition: all 0.2s ease-in-out;
+}
+
+.completed {
+	border: 2px solid #fff;
+}
+
+.completed .tile {
+	border: none;
+}
+
+.tileWrapper {
+	/*background: #E6E6E6;*/
+	display: block;
+	margin: 0 auto;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+
+.tileWrapper:after {
+	content: "";
+	display: block;
+	padding-top: 100%;
+}
+
+.chosen {
+	border: 5px solid #009cff;
+}
+/* end game styles */
+
+footer {
+	color: #FFF;
+	font-size: .8em;
+}
+
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 767px) {
+	.gameContent .gameContentMaxW {
+		max-width: 100%;
+		width: 90%;
+	}
+
+	.gameSettings .gameSetCol, 
+	.gameSettings .gameSetCol input,
+	.gameSettings .gameSetCol label {
+		display: block;
+		margin: 5px auto;
+	}
+
+	.gameSettings .gameSetCol input,
+	.gameSettings .gameSetCol select {
+		width: 90%;
+	}
+}

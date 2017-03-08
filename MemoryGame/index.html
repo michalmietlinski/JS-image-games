@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="game">
+<head>
+	<title>Memory Skill Game</title>
+
+	<script src="angular.js"></script>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script src="controller.js"></script>
+
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300" rel="stylesheet" type="text/css" />
+	<link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,vietnamese,latin-ext,cyrillic" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="style.css" />
+
+	<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+	<link rel="bookmark" href="images/favicon.png" type="image/x-icon" />
+</head>
+
+<body ng-controller="mainController">
+	<gierka style="width: {{widthof}}px; display:block"></gierka>
+
+
+		<footer>
+			&copy;2016 &reg;Pringles
+		</footer>
+	
+</body>
+	<script type="text/ng-template" id="onetitle2.html">
+		<header>
+		
+			<h1>
+				Memory
+			</h1>
+		</header>
+		
+		<div class="gameSettings">
+			
+			<div class="gameSetCol">
+				<label>Width</label>
+				<input ng-minlength="3" type="number" ng-maxlength="4" ng-model="widthof" />
+			</div>
+			
+		</div>
+
+		<div class="gameContent">
+			<div class="gameContentMaxW">
+				<div ng-class="{'tileWrapper' : true, 'completed': obj.completed} ">
+			
+					<div ng-repeat="(key, value) in obj" ng-class="{'chosen': value.isChosen}" class="tile"  style="top : {{(Math.ceil(value.position/Math.sqrt(2*number))-1)*(100/Math.sqrt(2*number))}}%; left: {{((value.position-1)%Math.sqrt(2*number))*(100/Math.sqrt(2*number))}}%; width: {{(100/Math.sqrt(2*number))}}%; height: {{(100/Math.sqrt(2*number))}}%; background: url('{{value.immage}}') no-repeat; background-size: 100% 100% ;" ng-click="moveclick(key)"></div>
+					<!--  background-size:{{Math.sqrt(number)*100}}% {{Math.sqrt(number)*100}}%; -->
+				</div>
+				<!--Data in directive: key: {{value.id}}  position: {{value.position}} value: {{(Math.floor(value.position%Math.sqrt(number)))*(100/Math.sqrt(number))}}-->
+			</div>
+		</div>
+</script>	
+</html>
